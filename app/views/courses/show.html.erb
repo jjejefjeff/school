@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col-md-8 col-md-offset-2">
+        <h1><%= @course.name%></h1>
+        <h4>
+          Student list:
+        </h4>
+        <div class="list-group">
+          <% @course.enrollments.each do |enroll| %>
+          <a href="#" class="list-group-item ">
+            <h4 class="list-group-item-heading"><%=enroll.student.name%></h4>  
+          </a>
+          <% end %>
+      </div>
+    </div>
+  </div>
+
+<a href="/courses/<%= @course.id %>/edit">Edit</a> |
+<a href="/courses/<%= @course.id %>/destroy">Destroy</a>
